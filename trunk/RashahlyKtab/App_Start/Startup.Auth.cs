@@ -46,9 +46,9 @@ namespace RashahlyKtab
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "303931003128394",
+               appSecret: "077da83a7169b2c2df12730d5c85380d");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
