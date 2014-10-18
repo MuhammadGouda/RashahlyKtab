@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RashahlyKtab", "RashahlyKtab\RashahlyKtab.csproj", "{C8746699-7FF5-4275-80B5-16BCD3071F93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RashahlyKtab", "RashahlyKtab\RashahlyKtab.csproj", "{8949FB4A-3012-4DF0-A61C-B759DEFC59CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{52DAD042-6C86-4C47-905B-5375E75B414B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{B32CF2C3-9D34-4D4B-92CA-995D15417AF1}"
 	ProjectSection(SolutionItems) = preProject
 		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
 		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{1E1EF206-6C57-46A3-8C27-4E51FAA8E174}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{D65D27C5-B44A-453B-98E2-61713821BE53}"
 	ProjectSection(SolutionItems) = preProject
 		PublishScripts\Configurations\RashahlyKtab-WAWS-dev.json = PublishScripts\Configurations\RashahlyKtab-WAWS-dev.json
 	EndProjectSection
@@ -22,15 +22,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C8746699-7FF5-4275-80B5-16BCD3071F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8746699-7FF5-4275-80B5-16BCD3071F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8746699-7FF5-4275-80B5-16BCD3071F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8746699-7FF5-4275-80B5-16BCD3071F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8949FB4A-3012-4DF0-A61C-B759DEFC59CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8949FB4A-3012-4DF0-A61C-B759DEFC59CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8949FB4A-3012-4DF0-A61C-B759DEFC59CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8949FB4A-3012-4DF0-A61C-B759DEFC59CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1E1EF206-6C57-46A3-8C27-4E51FAA8E174} = {52DAD042-6C86-4C47-905B-5375E75B414B}
+		{D65D27C5-B44A-453B-98E2-61713821BE53} = {B32CF2C3-9D34-4D4B-92CA-995D15417AF1}
 	EndGlobalSection
 EndGlobal

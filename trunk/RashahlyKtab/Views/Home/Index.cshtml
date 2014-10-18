@@ -1,60 +1,31 @@
-﻿@using RashahlyKtab.Models
-@using Microsoft.AspNet.Mvc.Facebook.Models
-@model MyAppUser
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 
-<article class="intro">
-    <span id="profilePicture">
-        @if (Model.ProfilePicture != null && Model.ProfilePicture.Data != null)
-        {
-            <img src="@Model.ProfilePicture.Data.Url" />
-        }
-    </span>
-    <h3>Welcome @Model.Name</h3>
-    <label>Email: @Model.Email</label>
-</article>
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
 
-<article id="content">
-    <div class="left">
-        <h4>Friends</h4>
-        @if (Model.Friends != null && Model.Friends.Data != null && Model.Friends.Data.Count > 0)
-        {
-            foreach (var myFriend in @Model.Friends.Data)
-            {
-            <a href="@myFriend.Link" target="_blank">
-                <div class="photoTile">
-                    <label>@myFriend.Name</label>
-                    @if (myFriend.Picture != null && myFriend.Picture.Data != null)
-                    {
-                        <img src="@myFriend.Picture.Data.Url" />
-                    }
-                </div>
-            </a>
-            }
-        }
-        else
-        {
-            <p>No friends found.</p>
-        }
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="right">
-        <h4>Photos</h4>
-        @if (Model.Photos != null && Model.Photos.Data != null && Model.Photos.Data.Count > 0)
-        {
-            foreach (var photo in @Model.Photos.Data)
-            {
-            <a href="@photo.Link" target="_blank">
-                <div class="photoTile">
-                    <img src="@photo.ThumbnailUrl" />
-                </div>
-            </a>
-            }
-        }
-        else
-        {
-            <p>No photo available.</p>
-        }
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
-</article>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
