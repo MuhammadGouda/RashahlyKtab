@@ -14,7 +14,7 @@ namespace RashahlyKtab
     {
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new RashahlyKtabDatabaseInitializer()); 
+            //System.Data.Entity.Database.SetInitializer(new ApplicationDbContextInitializer()); 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

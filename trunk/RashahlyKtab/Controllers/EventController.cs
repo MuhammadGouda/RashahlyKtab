@@ -15,7 +15,7 @@ namespace RashahlyKtab.Controllers
     
     public class EventController : ApiController
     {
-        private RashahlyKtabContext db = new RashahlyKtabContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         protected override void Dispose(bool disposing)
         {
