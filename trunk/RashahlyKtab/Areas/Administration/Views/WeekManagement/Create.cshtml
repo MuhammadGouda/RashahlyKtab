@@ -1,0 +1,27 @@
+﻿
+@Scripts.Render("~/scripts/app/week.js")
+
+@{
+    
+
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div ng-app="weekApp">
+    <div ng-controller="weekController as weekCtrl">
+        <form ng-submit="weekCtrl.addWeek()">
+
+            <input type="text" ng-model="weekCtrl.week.name" />
+            <input type="date" ng-model="weekCtrl.week.startDate" />
+            <textarea ng-model="weekCtrl.week.description"></textarea>
+            @*<input type="date" ng-model="weekCtrl.endDate" />*@
+
+            <input type="submit" value="Submit"  ng-disabled="weekCtrl.ui.disableForm"/>
+        </form>
+
+    </div>
+
+</div>
+
