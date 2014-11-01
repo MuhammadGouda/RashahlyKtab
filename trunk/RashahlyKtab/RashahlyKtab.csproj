@@ -182,9 +182,9 @@
     <Compile Include="Migrations\201411011124504_After_merge.Designer.cs">
       <DependentUpon>201411011124504_After_merge.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201411011239258_merge Events into ApplicationDBConext.cs" />
-    <Compile Include="Migrations\201411011239258_merge Events into ApplicationDBConext.Designer.cs">
-      <DependentUpon>201411011239258_merge Events into ApplicationDBConext.cs</DependentUpon>
+    <Compile Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.cs" />
+    <Compile Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.Designer.cs">
+      <DependentUpon>201411011239258_merge_Events_into_ApplicationDBConext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -280,8 +280,8 @@
     <EmbeddedResource Include="Migrations\201411011124504_After_merge.resx">
       <DependentUpon>201411011124504_After_merge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201411011239258_merge Events into ApplicationDBConext.resx">
-      <DependentUpon>201411011239258_merge Events into ApplicationDBConext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.resx">
+      <DependentUpon>201411011239258_merge_Events_into_ApplicationDBConext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
