@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -178,17 +180,20 @@
     <Compile Include="Migrations\201410181244594_InitialCreate.Designer.cs">
       <DependentUpon>201410181244594_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201411011124504_After_merge.cs" />
-    <Compile Include="Migrations\201411011124504_After_merge.Designer.cs">
-      <DependentUpon>201411011124504_After_merge.cs</DependentUpon>
+    <Compile Include="Migrations\201411011449277_Creating Contribution Model.cs" />
+    <Compile Include="Migrations\201411011449277_Creating Contribution Model.Designer.cs">
+      <DependentUpon>201411011449277_Creating Contribution Model.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.cs" />
-    <Compile Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.Designer.cs">
-      <DependentUpon>201411011239258_merge_Events_into_ApplicationDBConext.cs</DependentUpon>
+    <Compile Include="Migrations\201411011456372_Correcting Contribution Model.cs" />
+    <Compile Include="Migrations\201411011456372_Correcting Contribution Model.Designer.cs">
+      <DependentUpon>201411011456372_Correcting Contribution Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\ContributionModel.cs" />
+    <Compile Include="Models\ContributorModel.cs" />
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -213,6 +218,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\RashahlyKtab.pubxml" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -275,12 +281,15 @@
     <EmbeddedResource Include="Migrations\201410181244594_InitialCreate.resx">
       <DependentUpon>201410181244594_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201411011124504_After_merge.resx">
-      <DependentUpon>201411011124504_After_merge.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201411011449277_Creating Contribution Model.resx">
+      <DependentUpon>201411011449277_Creating Contribution Model.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201411011239258_merge_Events_into_ApplicationDBConext.resx">
-      <DependentUpon>201411011239258_merge_Events_into_ApplicationDBConext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201411011456372_Correcting Contribution Model.resx">
+      <DependentUpon>201411011456372_Correcting Contribution Model.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

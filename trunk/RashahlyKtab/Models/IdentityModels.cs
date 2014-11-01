@@ -22,6 +22,10 @@ namespace RashahlyKtab.Models
     {
 
         public DbSet<Event> Events { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Contribution> Contributions { get; set; }
+        public DbSet<Contributor> Contributors { get; set; }
+        
 
 
         public ApplicationDbContext()
