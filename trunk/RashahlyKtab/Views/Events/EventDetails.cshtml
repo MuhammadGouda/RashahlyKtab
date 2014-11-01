@@ -1,1 +1,8 @@
-﻿
+﻿<div ng-controller="EventDetailsController as eventCtrl">
+     
+    <label>Title:</label><label>{{eventCtrl.event.title}}</label>
+    <label>Description:</label><label>{{eventCtrl.event.description}}</label>
+    <label>Start date:</label><label>{{eventCtrl.event.startDate}}</label>
+    <label>End date:</label><label>{{eventCtrl.event.endDate | date}}</label>
+
+</div>

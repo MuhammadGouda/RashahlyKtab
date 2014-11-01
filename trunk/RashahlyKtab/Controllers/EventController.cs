@@ -48,6 +48,17 @@ namespace RashahlyKtab.Controllers
             return this.Ok(allEvents);
         }
 
+
+        [ResponseType(typeof(Event))]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            var @event = await this.db.Events.FirstOrDefaultAsync(e => e.Id == id);
+            if (@event == null)
+                return NotFound();
+
+            return Ok(@event);
+        }
+
         private async Task<Event> StoreAsync(Event newEvent)
         {
             newEvent.CreateionDate = DateTime.Now;           

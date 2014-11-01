@@ -1,6 +1,6 @@
 ﻿(function () {
     var app = angular.module("EventContributionModule", []);
-    app.controller("EventStatisticsController", ["$http", "$location", function ($http, $location) {
+    app.controller("EventDetailsController", ["$http", "$location", function ($http, $location) {
 
         var self = this;
 

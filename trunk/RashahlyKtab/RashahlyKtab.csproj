@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201411011456372_Correcting Contribution Model.Designer.cs">
       <DependentUpon>201411011456372_Correcting Contribution Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411011658418_Event model.cs" />
+    <Compile Include="Migrations\201411011658418_Event model.Designer.cs">
+      <DependentUpon>201411011658418_Event model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookModel.cs" />
@@ -224,7 +228,6 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ClassDiagram1.cd" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\WeekManagement\Create.cshtml" />
@@ -302,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411011456372_Correcting Contribution Model.resx">
       <DependentUpon>201411011456372_Correcting Contribution Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411011658418_Event model.resx">
+      <DependentUpon>201411011658418_Event model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
