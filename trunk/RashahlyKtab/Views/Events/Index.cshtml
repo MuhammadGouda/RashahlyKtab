@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Event";
+}
+
+@section scripts{
+    @Scripts.Render("~/Client/EventContribution.js")
+}
+<div ng-app="EventContributionModule">
+
+    
+    @Html.Partial("EventDetails", null)
+    @Html.Partial("EventStatistics", null)
+    @Html.Partial("EventJoin", null)
+
+
+</div>
