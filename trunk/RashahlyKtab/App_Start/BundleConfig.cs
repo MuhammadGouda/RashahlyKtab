@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Optimization;
 
 namespace RashahlyKtab
@@ -26,6 +27,26 @@ namespace RashahlyKtab
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+
+            Configuration c = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~");
+            var theme = c.AppSettings.Settings["Theme"].Value.ToLower();
+            switch (theme)
+            {
+
+                case "dark":
+                    bundles.Add(new StyleBundle("~/Content/css").Include(
+                          "~/Content/Superhero/bootstrap.css",
+                          "~/Content/site.css"));
+                    break;               
+                default:
+                    bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/Spacelab/bootstrap.css",
+                      "~/Content/site.css"));
+                    break;
+
+            }
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
