@@ -63,7 +63,7 @@
                                     <td class="text-active h4" ng-class="{info: event.isAtive}">{{event.createionDate | date}}</td>
                                     <td class="text-active h4" ng-class="{info: event.isAtive}">{{event.endDate | date}}</td>
                                     <td class="text-active h4" ng-class="{info: event.isAtive}">{{event.startDate | date}}</td>
-                                    <td class="text-active h4 btn-link" ng-class="{info: event.isAtive}">{{event.title}}</td>
+                                    <td class="text-active h4 btn-link" ng-class="{info: event.isAtive}"><a href="/Events/{{event.id}}">{{event.title}}</a></td>
                                 </tr>
                             </tbody>
                         </table>
