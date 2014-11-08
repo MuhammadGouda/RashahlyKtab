@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -20,5 +21,8 @@ namespace RashahlyKtab.Models
         [MaxLength(1000)]
         public string Description { get; set; }
         //public ApplicationUser Creator { get; set; }
+
+        [NotMapped]
+        public EventStatistics Statistics { get; set; }
     }
 }

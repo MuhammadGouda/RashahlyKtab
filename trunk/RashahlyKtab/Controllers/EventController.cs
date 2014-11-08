@@ -50,11 +50,22 @@ namespace RashahlyKtab.Controllers
 
 
         [ResponseType(typeof(Event))]
-        public async Task<IHttpActionResult> Get(int id)
+        public async Task<IHttpActionResult> Get(int id, [FromUri(Name="includestatistics")]bool includeStatistics = false)
         {
             var @event = await this.db.Events.FirstOrDefaultAsync(e => e.Id == id);
+            
             if (@event == null)
                 return NotFound();
+            if (includeStatistics)
+            {
+                var statistics = new EventStatistics();
+                statistics.NumberOfContributors = (uint) await db.Contributors.CountAsync(c => c.CurrentEvent.Id == @event.Id);
+                statistics.NumberOfContributions = (uint) await db.Contributions.CountAsync(c => c.Contributer.CurrentEvent.Id == @event.Id);
+                int? numPages = await db.Contributions.Where(c => c.Contributer.CurrentEvent.Id == @event.Id).SumAsync(c => (int?)c.CurrentPage);
+                statistics.NumberOfReadPages = (uint)(numPages ?? 0);
+
+                @event.Statistics = statistics;
+            }
 
             return Ok(@event);
         }

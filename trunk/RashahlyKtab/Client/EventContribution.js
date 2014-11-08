@@ -9,7 +9,7 @@
 
         var eventid = $location.absUrl().split('/').pop();
 
-        $http.get("/api/event/" + eventid).success(function (data) {
+        $http.get("/api/event/" + eventid + '?includestatistics=true').success(function (data) {
             self.event = data;
         }).error(function (data) {
 
