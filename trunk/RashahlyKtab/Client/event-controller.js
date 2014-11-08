@@ -1,12 +1,13 @@
 ﻿(function () {
     var app = angular.module('EventApp', []);
     app.controller('EventsController', function ($scope, $http) {
-        
+              
+
         self = this;
         self.newEvent = { title: "", startDate: "", endDate: "" };
         
         self.uiHelper = {
-            loaded: false, addMode: false, message: "loading events...",
+            loaded: false, addMode: false, message: "جاري التحميل ...",
             showAddMode : function () {
                 this.addMode = true;                
             },
@@ -19,19 +20,18 @@
         self.dateHelper = {
             updateEndDate: function (strDate) {
                 var startDate = strToDate(strDate);
-                self.newEvent.endDate = (addDays(startDate, 7));
-                //$("#endDate").val(addDays(startDate, 7).format("dd.mm.yyyy"));                  
+                self.newEvent.endDate = (addDays(startDate, 7));//endDate = startDate + 7 days;                                 
             }
         };
         
         self.getAllEvents = function () {            
             self.uiHelper.addMode = false;
-            self.uiHelper.message = "loading events...";
+            self.uiHelper.message = "جاري التحميل ...";
             $http.get("/api/event").success(function (data, status, headers, config) {
                 self.events = data;
                 self.uiHelper.loaded = true;
             }).error(function (data, status, headers, config) {
-                self.uiHelper.message= "Oops... something went wrong";
+                self.uiHelper.message= "عذرا .. تعذر الاتصال ، رجاء حاول مرة أخرى أو اتصل بالدعم الفني";
                 self.uiHelper.loaded = false;
             });
         };
