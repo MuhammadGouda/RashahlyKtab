@@ -1,12 +1,31 @@
 ﻿<div ng-controller="EventDetailsController as eventCtrl">
      
-    <label>Title:</label><label>{{eventCtrl.event.title}}</label>
-    <label>Description:</label><label>{{eventCtrl.event.description}}</label>
-    <label>Start date:</label><label>{{eventCtrl.event.startDate | date}}</label>
-    <label>End date:</label><label>{{eventCtrl.event.endDate | date}}</label>
-    <h3>Statis</h3>
-    <label># of readers:</label><label>{{eventCtrl.event.statistics.numberOfContributors}}</label>
-    <label># of books:</label><label>{{eventCtrl.event.statistics.numberOfContributions}}</label>
-    <label># of pages:</label><label>{{eventCtrl.event.statistics.numberOfReadPages}}</label>
+
+    <div class="row">
+        <div class="col-md-9">
+            <h1>{{eventCtrl.event.title}}</h1>
+            <div>
+                <p>{{eventCtrl.event.description}}</p>
+            </div>
+            <label>{{eventCtrl.event.startDate | date}}</label> - <label>{{eventCtrl.event.endDate | date}}</label>
+            <br />
+            <div class="fb-share-button" data-href="http://www.rashahlyktabtest.dev/Events/1" data-layout="box_count"></div>
+        </div>
+
+        <div class="col-md-3">
+            
+                    <h4>Statistics</h4>
+                    <label># of readers:</label><label>{{eventCtrl.event.statistics.numberOfContributors}}</label>
+                    <br />
+                    <label># of books:</label><label>{{eventCtrl.event.statistics.numberOfContributions}}</label>
+                    <br />
+                    <label># of pages:</label><label>{{eventCtrl.event.statistics.numberOfReadPages}}</label>
+
+        </div>
+    </div>
+    
+    
+
+    
 
 </div>

@@ -237,8 +237,10 @@
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\WeekManagement\Create.cshtml" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\RashahlyKtab %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\RashahlyKtab.pubxml" />
     <Content Include="Scripts\angular.min.js.map" />
+    <None Include="Properties\PublishProfiles\RashahlyKtabDev.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dateFormatter.js" />
     <Content Include="Scripts\datepicker.js" />
@@ -289,6 +291,7 @@
     <Content Include="Views\Events\EventStatistics.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
+    <Content Include="Views\Shared\FacebookInit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

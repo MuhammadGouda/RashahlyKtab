@@ -16,8 +16,11 @@ namespace RashahlyKtab
             routes.MapRoute(
                 name: "WithParam",
                 url: "{controller}/{id}"
-                , defaults: new {action="Index" }
+                , defaults: new { action = "Index" }
+                , constraints: new { controller = "Events"}
             );
+
+
 
             routes.MapRoute(
                 name: "Default",
