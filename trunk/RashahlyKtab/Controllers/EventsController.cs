@@ -11,6 +11,7 @@ namespace RashahlyKtab.Controllers
         // GET: Events
         public ActionResult Index(int id)
         {
+            ViewBag.id = id;
             return View();
         }
      
