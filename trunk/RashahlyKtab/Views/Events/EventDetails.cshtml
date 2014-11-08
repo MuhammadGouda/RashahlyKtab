@@ -1,4 +1,5 @@
-﻿<div ng-controller="EventDetailsController as eventCtrl">
+﻿@using RashahlyKtab.Utilities
+<div ng-controller="EventDetailsController as eventCtrl">
      
 
     <div class="row">
@@ -9,7 +10,7 @@
             </div>
             <label>{{eventCtrl.event.startDate | date}}</label> - <label>{{eventCtrl.event.endDate | date}}</label>
             <br />
-            <div class="fb-share-button" data-href="http://www.rashahlyktabtest.dev/Events/1" data-layout="box_count"></div>
+            <div class="fb-share-button" data-href="@ConfigReader.DomainName/Events/1" data-layout="box_count"></div>
         </div>
 
         <div class="col-md-3">
