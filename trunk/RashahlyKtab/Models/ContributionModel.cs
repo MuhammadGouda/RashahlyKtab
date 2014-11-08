@@ -29,6 +29,7 @@ namespace RashahlyKtab.Models
         [NotMapped]
         public double Progress { get; set; }
 
+        [DefaultValue(DateTime.Now)]
         public DateTime StartDate { get; set; }
         public DateTime? EndtDate { get; set; }
 

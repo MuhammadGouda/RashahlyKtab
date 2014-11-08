@@ -71,6 +71,7 @@ namespace RashahlyKtab.Controllers
         }
 
         // POST api/Contribution
+        [Authorize()]
         [ResponseType(typeof(Contribution))]
         public async Task<IHttpActionResult> PostContribution(Contribution contribution)
         {
