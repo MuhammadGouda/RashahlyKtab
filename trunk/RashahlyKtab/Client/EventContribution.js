@@ -1,5 +1,6 @@
 ﻿(function () {
     var app = angular.module("EventContributionModule", []);
+
     app.controller("EventDetailsController", ["$http", "$location", function ($http, $location) {
 
         var self = this;
@@ -17,4 +18,24 @@
 
         });
     }]);
+
+    app.controller("UserContributionsController", ["$http", "$location", function ($http, $location) {
+
+        var self = this;
+        self.userContributions = [];
+
+        var eventid = $location.absUrl().split('/').pop();
+
+        self.getUserContributions = function () {
+
+            $http.get("/api/contribution").success(function (data, status, headers, config) {
+                self.userContributions = data;
+            }).error(function(data, status, headers, config) {
+                
+            });
+
+        };
+
+    }]);
+
 })();

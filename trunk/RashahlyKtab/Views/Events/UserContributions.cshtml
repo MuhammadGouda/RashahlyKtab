@@ -1,0 +1,31 @@
+﻿
+
+<div ng-controller="UserContributionsController as contributionsCtrl" ng-init="contributionsCtrl.getUserContributions()">
+
+    <div>
+        <h4>Currently Reading</h4>
+    </div>
+
+    <div style="padding-top:2em" class="front">
+
+        <p class="lead">Loading...</p>
+
+        <div>
+            You didn't add any books yet
+        </div>
+
+        <table class="table table-striped table-hover" align="left">
+            <tbody>
+                <tr ng-repeat="contribution in contributionsCtrl.userContributions">
+                    <td class="text-active h4">{{contribution.book.title}}</td>
+                    <td class="text-active h4"><label>started on </label>{{contribution.startDate | date}}</td>
+                    <td class="text-active h4">{{event.progress}}<label> %</label></td>
+                    <td class="text-active h4 btn-link"><a href="">update progress</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+

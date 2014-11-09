@@ -217,7 +217,6 @@
     <Content Include="Client\dateHelper.js" />
     <Content Include="Client\event-controller.js" />
     <Content Include="Client\EventContribution.js" />
-    <Content Include="Client\updateStatus-controller.js" />
     <Content Include="Client\user-controller.js" />
     <Content Include="Content\Arabic\bootstrap-rtl.css" />
     <Content Include="Content\bootstrap.css" />
@@ -295,7 +294,7 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
     <Content Include="Views\Shared\FacebookInit.cshtml" />
-    <Content Include="Views\Events\UpdateStatus.cshtml" />
+    <Content Include="Views\Events\UserContributions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
