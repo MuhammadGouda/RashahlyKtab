@@ -294,6 +294,7 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
     <Content Include="Views\Shared\FacebookInit.cshtml" />
+    <Content Include="Views\Events\UpdateStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

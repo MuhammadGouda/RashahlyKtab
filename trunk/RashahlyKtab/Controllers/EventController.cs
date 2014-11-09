@@ -37,8 +37,15 @@ namespace RashahlyKtab.Controllers
         public async Task<IHttpActionResult> Get()
         {
             var userId = User.Identity.Name;
-
-            List<Event> allEvents = await this.GetAllEvents();
+            List<Event> allEvents = null;
+            try
+            {
+                allEvents = await this.GetAllEvents();
+            }
+            catch (Exception ex)
+            {
+                return this.InternalServerError(ex);
+            }
 
             if (allEvents == null)
             {
