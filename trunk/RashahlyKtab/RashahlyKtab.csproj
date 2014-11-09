@@ -217,6 +217,7 @@
     <Content Include="Client\dateHelper.js" />
     <Content Include="Client\event-controller.js" />
     <Content Include="Client\EventContribution.js" />
+    <Content Include="Client\updateStatus-controller.js" />
     <Content Include="Client\user-controller.js" />
     <Content Include="Content\Arabic\bootstrap-rtl.css" />
     <Content Include="Content\bootstrap.css" />
