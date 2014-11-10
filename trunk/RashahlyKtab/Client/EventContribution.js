@@ -23,15 +23,27 @@
 
         var self = this;
         self.userContributions = [];
+        self.isBusy = false;
+        self.hasError = false;
+        self.errorMessage = '';
 
         var eventid = $location.absUrl().split('/').pop();
 
         self.getUserContributions = function () {
+            self.isBusy = true;
+            $http.get("/api/contributions?eventId=" + eventid).success(function (data, status, headers, config) {
+                self.isBusy = false;
+                if (data.length > 0) {
+                    self.userContributions = data;
+                } else {
+                    self.hasError = true;
+                    self.errorMessage = "You didn't add any books yet";
+                }
 
-            $http.get("/api/contribution").success(function (data, status, headers, config) {
-                self.userContributions = data;
             }).error(function(data, status, headers, config) {
-                
+                self.isBusy = false;
+                self.hasError = true;
+                self.errorMessage = "Oops,something went wrong! please again later.";
             });
 
         };

@@ -15,19 +15,25 @@ using RashahlyKtab.Models;
 namespace RashahlyKtab.Controllers
 {
     [Authorize]
-    public class ContributionController : ApiController
+    public class ContributionsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET api/Contribution
+        // GET: api/Contributions
+        public IQueryable<Contribution> GetContributions()
+        {
+            return db.Contributions;
+        }
+
+        // GET api/Contributions?eventId={eventId}
         [ResponseType(typeof(List<Contribution>))]
-        public async Task<IHttpActionResult> Get()
+        public async Task<IHttpActionResult> GetContribution(int eventId)
         {
             var userId = User.Identity.GetUserId();
             List<Contribution> userContributions = null;
             try
             {
-                userContributions = await GetUserActiveContributions(userId);
+                userContributions = await GetUserEventContributions(userId, eventId);
             }
             catch (Exception ex)
             {
@@ -36,11 +42,11 @@ namespace RashahlyKtab.Controllers
             return this.Ok(userContributions);
         }
 
-        private async Task<List<Contribution>> GetUserActiveContributions(string userId)
+        private async Task<List<Contribution>> GetUserEventContributions(string userId,int eventId)
         {
             var userContributions = from contributions in db.Contributions.Include(c=>c.Book)
                                     where contributions.Contributer.User.Id == userId
-                                          && contributions.Contributer.CurrentEvent.IsAtive
+                                          && contributions.Contributer.CurrentEvent.Id == eventId
                                     select contributions;
 
             var userContributionsList = await userContributions.ToListAsync();

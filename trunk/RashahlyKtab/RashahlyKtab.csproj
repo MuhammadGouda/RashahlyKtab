@@ -173,7 +173,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\WeekManagementController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ContributionController.cs" />
+    <Compile Include="Controllers\ContributionsController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

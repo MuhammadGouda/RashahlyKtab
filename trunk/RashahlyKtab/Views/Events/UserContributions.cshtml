@@ -8,10 +8,10 @@
 
     <div style="padding-top:2em" class="front">
 
-        <p class="lead">Loading...</p>
+        <p class="lead" ng-show="contributionsCtrl.isBusy">Loading...</p>
 
-        <div>
-            You didn't add any books yet
+        <div ng-show="contributionsCtrl.hasError">
+            {{contributionsCtrl.errorMessage}}
         </div>
 
         <table class="table table-striped table-hover" align="left">
