@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -105,9 +109,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -173,7 +174,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\WeekManagementController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ContributionsController.cs" />
+    <Compile Include="Controllers\ContributionController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -201,6 +202,10 @@
     <Compile Include="Migrations\201411081219404_Make Contribution EndDate nullable.Designer.cs">
       <DependentUpon>201411081219404_Make Contribution EndDate nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411110716271_Move CurrentEvent from Contributor to Contribution.cs" />
+    <Compile Include="Migrations\201411110716271_Move CurrentEvent from Contributor to Contribution.Designer.cs">
+      <DependentUpon>201411110716271_Move CurrentEvent from Contributor to Contribution.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookModel.cs" />
@@ -214,6 +219,7 @@
     <Compile Include="Utilities\ConfigReader.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\autocomplete.js" />
     <Content Include="Client\dateHelper.js" />
     <Content Include="Client\event-controller.js" />
     <Content Include="Client\EventContribution.js" />
@@ -294,7 +300,6 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
     <Content Include="Views\Shared\FacebookInit.cshtml" />
-    <Content Include="Views\Events\UserContributions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -322,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411081219404_Make Contribution EndDate nullable.resx">
       <DependentUpon>201411081219404_Make Contribution EndDate nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411110716271_Move CurrentEvent from Contributor to Contribution.resx">
+      <DependentUpon>201411110716271_Move CurrentEvent from Contributor to Contribution.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
