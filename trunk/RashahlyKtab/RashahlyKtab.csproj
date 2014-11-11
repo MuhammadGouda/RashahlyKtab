@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201411110716271_Move CurrentEvent from Contributor to Contribution.Designer.cs">
       <DependentUpon>201411110716271_Move CurrentEvent from Contributor to Contribution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411111740463_Move CurrentEvent back to Contributor.cs" />
+    <Compile Include="Migrations\201411111740463_Move CurrentEvent back to Contributor.Designer.cs">
+      <DependentUpon>201411111740463_Move CurrentEvent back to Contributor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookModel.cs" />
@@ -330,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411110716271_Move CurrentEvent from Contributor to Contribution.resx">
       <DependentUpon>201411110716271_Move CurrentEvent from Contributor to Contribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411111740463_Move CurrentEvent back to Contributor.resx">
+      <DependentUpon>201411111740463_Move CurrentEvent back to Contributor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

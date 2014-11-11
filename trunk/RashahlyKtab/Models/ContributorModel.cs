@@ -11,10 +11,12 @@ namespace RashahlyKtab.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public Event CurrentEvent { get; set; }
+        //[Required]
+        //public Event CurrentEvent { get; set; }
         [Required]
         public ApplicationUser User { get; set; }
+        [Required]
+        public Event CurrentEvent { get; set; } 
         [Required]
         public DateTime JoinDate { get; set; }
         [DefaultValue(0)]

@@ -67,7 +67,7 @@ namespace RashahlyKtab.Controllers
             {
                 var statistics = new EventStatistics();
                 statistics.NumberOfContributors = (uint) await db.Contributors.CountAsync(c => c.CurrentEvent.Id == @event.Id);
-                statistics.NumberOfContributions = (uint) await db.Contributions.CountAsync(c => c.Contributer.CurrentEvent.Id == @event.Id);
+                statistics.NumberOfContributions = (uint)await db.Contributors.CountAsync(c => c.CurrentEvent.Id == @event.Id);
                 int? numPages = await db.Contributions.Where(c => c.Contributer.CurrentEvent.Id == @event.Id).SumAsync(c => (int?)c.CurrentPage);
                 statistics.NumberOfReadPages = (uint)(numPages ?? 0);
 

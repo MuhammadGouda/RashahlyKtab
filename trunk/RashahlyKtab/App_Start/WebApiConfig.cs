@@ -23,6 +23,12 @@ namespace RashahlyKtab
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "ActionBasedApi",
+                routeTemplate: "api/{controller}/{action}/{eventId}",
+                defaults: new { id = RouteParameter.Optional }
+            );
         }
     }
 }

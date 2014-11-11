@@ -37,8 +37,8 @@
         };
 
         self.saveEvent = function () {
-            $http.post('/api/event',
-                { 'title': self.newEvent.title, 'startDate': strToDate(self.newEvent.startDate), 'endDate': self.newEvent.endDate }
+            $http.post('/api/event', self.newEvent
+               // { 'title': self.newEvent.title, 'startDate': strToDate(self.newEvent.startDate), 'endDate': self.newEvent.endDate }
                 ).success(function (data, status, headers, config) {
                 self.uiHelper.clearForm();
                 self.getAllEvents();                

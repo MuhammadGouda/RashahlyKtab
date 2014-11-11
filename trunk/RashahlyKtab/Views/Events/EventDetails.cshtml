@@ -1,6 +1,5 @@
 ﻿@using RashahlyKtab.Utilities
-<div ng-controller="EventDetailsController as eventCtrl">
-     
+<div ng-controller="EventStatsController as eventCtrl" class="bg-primary">
 
     <div class="row">
         <div class="col-md-9">
@@ -12,21 +11,17 @@
             <br />
             <div class="fb-share-button" data-href="@ConfigReader.DomainName/Events/@ViewBag.id" data-layout="box_count"></div>
         </div>
-
         <div class="col-md-3">
-            
-                    <h4>Statistics</h4>
-                    <label># of readers:</label><label>{{eventCtrl.event.statistics.numberOfContributors}}</label>
-                    <br />
-                    <label># of books:</label><label>{{eventCtrl.event.statistics.numberOfContributions}}</label>
-                    <br />
-                    <label># of pages:</label><label>{{eventCtrl.event.statistics.numberOfReadPages}}</label>
 
+            <h4>Statistics</h4>
+            <label># of readers:</label><label>{{eventCtrl.event.statistics.numberOfContributors}}</label>
+            <br />
+            <label># of books:</label><label>{{eventCtrl.event.statistics.numberOfContributions}}</label>
+            <br />
+            <label># of pages:</label><label>{{eventCtrl.event.statistics.numberOfReadPages}}</label>
         </div>
     </div>
-    
-    
 
-    
+
 
 </div>
