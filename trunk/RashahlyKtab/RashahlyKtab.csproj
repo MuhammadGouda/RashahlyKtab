@@ -227,6 +227,7 @@
     <Content Include="Client\dateHelper.js" />
     <Content Include="Client\event-controller.js" />
     <Content Include="Client\EventContribution.js" />
+    <Content Include="Client\helper.js" />
     <Content Include="Client\user-controller.js" />
     <Content Include="Content\Arabic\bootstrap-rtl.css" />
     <Content Include="Content\bootstrap.css" />
@@ -300,7 +301,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Events\EventDetails.cshtml" />
     <Content Include="Views\Events\EventJoin.cshtml" />
-    <Content Include="Views\Events\EventStatistics.cshtml" />
+    <Content Include="Views\Events\EventContributions.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
     <Content Include="Views\Shared\FacebookInit.cshtml" />

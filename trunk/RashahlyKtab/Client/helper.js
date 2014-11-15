@@ -1,0 +1,1 @@
+﻿$("#progress").style("width", "10%")

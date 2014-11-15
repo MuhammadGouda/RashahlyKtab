@@ -3,7 +3,7 @@
     <section id="content">
         <div class="container">
             <div class="row">
-                <div class="flip-container text-center col-md-12" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getAllConts()">
+                <div class="flip-container text-center col-md-12" ng-controller="ContributionController as contCtrl" >
                     <button class="btn btn-info btn-lg" ng-click="contCtrl.uiHelper.showAddMode()">Join Event</button>
                     <div style="padding-top:2em" id="newEvent" ng-show="contCtrl.uiHelper.addMode" class="form-group-sm text-center">
                         <div class="form-group">
@@ -23,28 +23,7 @@
                         </div>
 
                     </div>
-                    <div style="padding-top:2em" class="front">
-                        <p class="lead" ng-hide="contCtrl.uiHelper.loaded">{{contCtrl.uiHelper.message}}</p>
-
-                        <table class="table table-striped table-hover" align="left">
-                            <thead>
-                                <tr>
-                                    <th class="text-center danger h4">Reader</th>
-                                    <th class="text-center danger h4">Book Title</th>
-                                    <th class="text-center danger h4">Read Pages</th>
-                                    <th class="text-center danger h4">Progress</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="cont in contCtrl.conts">
-                                    <td class="text-active h4" >{{cont.contributer.user.userName}}</td>
-                                    <td class="text-active h4" >{{cont.book.title}}</td>
-                                    <td class="text-active h4" >{{cont.currentPage }}</td>
-                                    <td class="text-active h4" >{{cont.progress}}%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    
                 </div>
             </div>
         </div>
