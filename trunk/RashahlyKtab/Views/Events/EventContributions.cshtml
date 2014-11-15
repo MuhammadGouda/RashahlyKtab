@@ -1,19 +1,14 @@
-﻿<div style="padding-top:2em" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getAllConts()">
+﻿<div style="padding-top:10px" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getAllConts()">
     <p class="lead" ng-hide="contCtrl.uiHelper.loaded">{{contCtrl.uiHelper.message}}</p>
     <div class="breadcrumb h4" >What Others Read...</div>
-    <div ng-repeat="cont in contCtrl.conts">
-        <table>
-        <tr>
-            <td>
-                <div><b><font color="Yellow"><a href="">{{cont.contributer.user.userName}}</a></font></b> from Cairo, Egypt is reading <b><font color="Yellow"> {{cont.book.title}}</font></b> page# {{cont.currentPage}}/{{cont.pagesCount}}</div>
-            </td>
-            <td>
-                <div id="progress" class="alert-danger" style="width:100%">{{cont.progress}}%</div>
-            </td>
-        </tr></table>
-        
-        
-        @*<div class="text-active h4">{{cont.progress}}%</div>*@
+    <div ng-repeat="cont in contCtrl.conts" style="padding-top:10px">
+
+        <span class="btn-link">{{cont.contributer.user.userName}}</span>
+        from Cairo, Egypt is reading <span class="btn-link"> {{cont.book.title}}</span>
+        finished {{cont.currentPage}} pages out of {{cont.pagesCount}}
+        <span id="progress" class="alert-danger" style="width:100%">{{cont.progress}}%</span>
+
+
     </div>
 </div>
 @section scripts{
