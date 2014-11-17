@@ -307,6 +307,7 @@
     <Content Include="Views\Shared\FacebookInit.cshtml" />
     <Content Include="Views\Events\MyContributions.cshtml" />
     <Content Include="Views\Events\AddBook.cshtml" />
+    <Content Include="Views\Events\Greetings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

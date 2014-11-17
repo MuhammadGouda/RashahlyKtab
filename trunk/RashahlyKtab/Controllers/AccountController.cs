@@ -11,12 +11,14 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using RashahlyKtab.Models;
+using System.Web.Security;
 
 namespace RashahlyKtab.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        
         private ApplicationUserManager _userManager;
 
         public AccountController()
@@ -48,6 +50,7 @@ namespace RashahlyKtab.Controllers
             return View();
         }
 
+        
         //
         // POST: /Account/Login
         [HttpPost]
