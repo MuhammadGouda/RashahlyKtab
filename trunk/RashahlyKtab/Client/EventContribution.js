@@ -58,6 +58,20 @@
                 self.uiHelper.loaded = false;
             });
         };
+
+        self.getMyConts = function () {
+            self.uiHelper.addMode = false;
+            self.uiHelper.message = "Loading...";
+            var eventId = $location.absUrl().split('/').pop();
+            var apiUrl = "/api/Contribution/CurrentContributor/" + eventId + "?userId=1"; // filtring Contributions by selected event            
+            $http.get(apiUrl).success(function (data, status, headers, config) {
+                self.myConts = data;
+                self.uiHelper.loaded = true;
+            }).error(function (data, status, headers, config) {
+                self.uiHelper.message = "Oops!... something went wrong.";
+                self.uiHelper.loaded = false;
+            });
+        };
         
         self.saveCont = function () {
             

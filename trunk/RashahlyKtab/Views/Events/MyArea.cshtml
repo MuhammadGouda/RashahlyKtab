@@ -12,22 +12,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <div class="breadcrumb h5">New Book</div>
-                                    <div class="form-group">
-                                        <label class="control-label " for="txtBookName">Book Title</label>
-                                        <input class="form-control" type="text" id="txtBookName" ng-model="contCtrl.newCont.book.title" />
-                                        <label class="control-label " for="txtPagesCount">Pages Count</label>
-                                        <input class="form-control" type="text" id="txtPagesCount" ng-model="contCtrl.newCont.pagesCount" />
-                                        <label class="control-label " for="txtBookURL">Book URL</label>
-                                        <input class="form-control " type="text" id="txtBookURL" ng-model="contCtrl.newCont.bookURL" />
-                                        <label class="control-label " for="txtImageURL">Image URL</label>
-                                        <input class="form-control " type="text" id="txtImageURL" ng-model="contCtrl.newCont.imageURL" />
-                                        <div class="form-group" style="padding-top:2em">
-                                            <input type="submit" value="Cancel" class="btn btn-danger btn-sm" ng-click="contCtrl.uiHelper.clearForm()" />
-                                            <input type="submit" value="Add and Share" class="btn btn-warning btn-sm" />
-                                            <input type="submit" value="Add" class="btn btn-info btn-sm " ng-click="contCtrl.saveCont()" />
-                                        </div>
-                                    </div>
+                                    @Html.Partial("AddBook", null)
                                 </td>
                                 <td valign="top">
                                     @Html.Partial("MyContributions", null)

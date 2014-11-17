@@ -28,7 +28,7 @@ namespace RashahlyKtab.Controllers
                 .ToListAsync();
         }
 
-        // GET api/Contribution
+        // GET api/Contribution/Event/eventId
         [ActionName("Event")]
         public async Task<List<Contribution>> GetContributions(int eventId)
         {
@@ -37,6 +37,18 @@ namespace RashahlyKtab.Controllers
                 .Include(c => c.Contributer.User)
                 .Include(c => c.Contributer.CurrentEvent)
                 .Where(c => c.Contributer.CurrentEvent.Id == eventId)
+                .ToListAsync();
+        }
+
+        // GET api/Contribution/CurrentContributor/eventId?userId=userId
+        [ActionName("CurrentContributor")]
+        public async Task<List<Contribution>> GetContributions(int eventId, string userId)
+        {
+            return await db.Contributions
+                .Include(c => c.Book)
+                .Include(c => c.Contributer.User)
+                .Include(c => c.Contributer.CurrentEvent)
+                .Where(c => c.Contributer.CurrentEvent.Id == eventId && c.Contributer.User.Id == userId)
                 .ToListAsync();
         }
 
@@ -109,13 +121,8 @@ namespace RashahlyKtab.Controllers
                 return BadRequest(ModelState);
             }
             
-            //int eventId = 0;
-            //int.TryParse(RequestContext.Url.Request.RequestUri.Query, out eventId);
-            //contribution.Contributer = GetContibutor(RequestContext.Principal.Identity.Name, contribution.CurrentEvent.Id);
             UpdateContribution(contribution);
-            //contribution.Contributer.JoinDate = DateTime.Now;
             
-
             db.Contributions.Add(contribution);
             try
             {

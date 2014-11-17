@@ -1,17 +1,17 @@
-﻿<div style="padding-top:10px" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getAllConts()">
+﻿<div style="padding-top:10px" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getMyConts()">
     <p class="lead" ng-hide="contCtrl.uiHelper.loaded">{{contCtrl.uiHelper.message}}</p>
-    <div class="breadcrumb h5" >My Progress</div>
-   
-    <table class="table table-striped table-hover" align="left" >
+    <div class="breadcrumb h5">My Progress</div>
+
+    <table class="table table-striped table-hover" align="left">
         <thead>
             <tr>
                 <th class="text-center danger ">Book</th>
                 <th class="text-center danger ">Current Page</th>
-                <th class="text-center danger ">Progress</th>                
+                <th class="text-center danger ">Progress</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cont in contCtrl.conts">
+            <tr ng-repeat="cont in contCtrl.myConts">
                 <td class="text-active">{{cont.book.title}}</td>
                 <td class="text-active">{{cont.pagesCount}}</td>
                 <td class="text-active">{{cont.progress}}%</td>

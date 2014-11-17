@@ -6,12 +6,8 @@
 @section scripts{
     @Scripts.Render("~/Client/EventContribution.js")    
 }
-<div ng-app="EventContributionModule">
-
-    
+<div ng-app="EventContributionModule">    
     @Html.Partial("EventDetails", null)
-    @Html.Partial("EventJoin", null)
+    @Html.Partial("MyArea", null)
     @Html.Partial("EventContributions", null)
-    @Html.Partial("UserContributions", null)
-
 </div>

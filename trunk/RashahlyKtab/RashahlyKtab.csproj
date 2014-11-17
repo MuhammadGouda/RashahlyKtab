@@ -300,11 +300,13 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Events\EventDetails.cshtml" />
-    <Content Include="Views\Events\EventJoin.cshtml" />
+    <Content Include="Views\Events\MyArea.cshtml" />
     <Content Include="Views\Events\EventContributions.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Home\UserArea.cshtml" />
     <Content Include="Views\Shared\FacebookInit.cshtml" />
+    <Content Include="Views\Events\MyContributions.cshtml" />
+    <Content Include="Views\Events\AddBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

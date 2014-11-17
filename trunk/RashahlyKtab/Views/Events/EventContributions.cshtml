@@ -1,7 +1,7 @@
 ﻿<div style="padding-top:10px" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getAllConts()">
     <p class="lead" ng-hide="contCtrl.uiHelper.loaded">{{contCtrl.uiHelper.message}}</p>
     <div class="breadcrumb h4" >What Others Read...</div>
-    <div ng-repeat="cont in contCtrl.conts" style="padding-top:10px">
+    <div ng-repeat="cont in contCtrl.conts | orderBy:'-id'" style="padding-top:10px">
 
         <span class="btn-link">{{cont.contributer.user.userName}}</span>
         from Cairo, Egypt is reading <span class="btn-link"> {{cont.book.title}}</span>
