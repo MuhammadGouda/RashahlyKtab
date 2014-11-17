@@ -60,6 +60,7 @@
         };
 
         self.getMyConts = function () {
+            
             self.uiHelper.addMode = false;
             self.uiHelper.message = "Loading...";
             var eventId = $location.absUrl().split('/').pop();

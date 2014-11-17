@@ -5,10 +5,9 @@
             <div class="row">
                 <div ng-controller="ContributionController as contCtrl" >
                     <div class="alert-warning">
-                        <span>Hurry Gouda.. you didn't join yet, </span>
-                        <span class="btn-link" ng-click="contCtrl.uiHelper.showAddMode()"> Join Now</span>
+                        @Html.Partial("Greetings", null)                        
                     </div>
-                    <div  id="newEvent" ng-show="contCtrl.uiHelper.addMode" class="form-group-sm">
+                    <div  id="myArea" ng-show="contCtrl.uiHelper.addMode" class="form-group-sm">
                         <table>
                             <tr>
                                 <td>

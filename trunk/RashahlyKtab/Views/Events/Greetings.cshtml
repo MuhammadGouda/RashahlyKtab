@@ -1,22 +1,18 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
     {
-    @Html.AntiForgeryToken()
-
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        @Html.AntiForgeryToken()
+        <span>Hurry </span> 
+        <span>@User.Identity.GetUserName().Split('@')[0]</span>
+        <span>.. you didn't join yet!</span>
+        <span class="btn-warning" ng-click="contCtrl.uiHelper.showAddMode()"> Join Now</span>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("تسجيل", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("دخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <span>Welcome .. you didn't join yet!</span>
+    @Html.ActionLink("Register Now", "Register", "Account", routeValues: null, htmlAttributes: new { title = "Register" })
 }
+
