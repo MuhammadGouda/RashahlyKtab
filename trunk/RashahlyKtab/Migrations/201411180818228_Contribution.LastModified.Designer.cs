@@ -13,7 +13,7 @@ namespace RashahlyKtab.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201411180815186_Contribution.LastModified"; }
+            get { return "201411180818228_Contribution.LastModified"; }
         }
         
         string IMigrationMetadata.Source

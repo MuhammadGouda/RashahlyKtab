@@ -27,6 +27,8 @@ namespace RashahlyKtab.Models
         public string ImageURL { get; set; }
         public string BookURL { get; set; }
 
+        public DateTime LastModified { get; set; }
+
 
 
         [NotMapped]
