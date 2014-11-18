@@ -60,14 +60,20 @@
         };
 
         self.getMyConts = function () {
-            
+            //not clean solution
+            //I store current userId in a hidden server side control and pass its value to angularjs function using JQuery selector
+            //I should get current userId directly from angularjs objects and services
+            var userId = $("#userId").text();            
             self.uiHelper.addMode = false;
+            self.hasData = false;
             self.uiHelper.message = "Loading...";
             var eventId = $location.absUrl().split('/').pop();
-            var apiUrl = "/api/Contribution/CurrentContributor/" + eventId + "?userId=1"; // filtring Contributions by selected event            
+            var apiUrl = "/api/Contribution/CurrentContributor/" + eventId + "?userId=" + userId; // filtring Contributions by selected event            
             $http.get(apiUrl).success(function (data, status, headers, config) {
                 self.myConts = data;
                 self.uiHelper.loaded = true;
+                if (data.length > 0)
+                    self.hasData = true;
             }).error(function (data, status, headers, config) {
                 self.uiHelper.message = "Oops!... something went wrong.";
                 self.uiHelper.loaded = false;

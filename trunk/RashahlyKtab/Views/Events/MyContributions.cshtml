@@ -1,11 +1,13 @@
 ﻿@using Microsoft.AspNet.Identity
 
-<div style="padding-left:100px" ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getMyConts()">    
+<div style="padding-left:100px" >    
     <div class="breadcrumb h5">My Progress</div>
-
-    <table class="table table-striped table-hover" align="left">
+   <div id="userId" style="visibility:hidden">@User.Identity.GetUserId()</div>
+    <div ng-hide="contCtrl.hasData">You did not add any books yet </div>
+    <table class="table table-striped table-hover" ng-show="contCtrl.hasData">
         <thead>
             <tr>
+                <th class="text-center danger ">Edit</th>
                 <th class="text-center danger ">Book</th>
                 <th class="text-center danger ">Current Page</th>
                 <th class="text-center danger ">Progress</th>
@@ -13,6 +15,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="cont in contCtrl.myConts">
+                <td class="text-active">{{cont.book.title}}</td>
                 <td class="text-active">{{cont.book.title}}</td>
                 <td class="text-active">{{cont.pagesCount}}</td>
                 <td class="text-active">{{cont.progress}}%</td>

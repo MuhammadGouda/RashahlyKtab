@@ -3,11 +3,11 @@
     <section id="content">
         <div class="container">
             <div class="row">
-                <div ng-controller="ContributionController as contCtrl" >
-                    <div class="alert-warning">
-                        @Html.Partial("Greetings", null)                        
+                <div ng-controller="ContributionController as contCtrl" ng-init="contCtrl.getMyConts()">
+                    <div class="alert-warning text-center">
+                        @Html.Partial("Greetings", null)
                     </div>
-                    <div  id="myArea" ng-show="contCtrl.uiHelper.addMode" class="form-group-sm">
+                    <div id="myArea" ng-show="contCtrl.uiHelper.addMode" class="form-group-sm">
                         <table>
                             <tr>
                                 <td>
@@ -18,10 +18,10 @@
                                 </td>
                             </tr>
                         </table>
-                        
+
 
                     </div>
-                    
+
                 </div>
             </div>
         </div>
