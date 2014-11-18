@@ -21,5 +21,7 @@ namespace RashahlyKtab.Models
         public DateTime JoinDate { get; set; }
         [DefaultValue(0)]
         public int Points { get; set; }
+        
+        public DateTime LastModified { get; set; }
     }
 }

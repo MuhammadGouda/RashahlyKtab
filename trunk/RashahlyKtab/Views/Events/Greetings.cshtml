@@ -2,8 +2,7 @@
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
-    {
-        @Html.AntiForgeryToken()
+    {        
     <div ng-hide="contCtrl.hasData">
         <span>Hurry </span>
         <span>@User.Identity.GetUserName().Split('@')[0]</span>

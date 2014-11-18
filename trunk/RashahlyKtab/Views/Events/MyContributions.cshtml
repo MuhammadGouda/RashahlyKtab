@@ -9,14 +9,18 @@
             <tr>
                 <th class="text-center danger ">Edit</th>
                 <th class="text-center danger ">Book</th>
+                @*<th class="text-center danger ">Book URL</th>*@
+                <th class="text-center danger ">Book Image</th>
                 <th class="text-center danger ">Current Page</th>
                 <th class="text-center danger ">Progress</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="cont in contCtrl.myConts">
-                <td class="text-active">{{cont.book.title}}</td>
-                <td class="text-active">{{cont.book.title}}</td>
+                <td class="text-active"><img src="~/Content/images/edit-icon2.png" class="btn-link"/></td>
+                @*<td class="text-active">{{cont.book.title}}</td>*@
+                <td class="text-active" width="200px"><a href="{{cont.bookURL}}">{{cont.book.title}}</a></td>
+                <td class="text-active"><img src="{{cont.imageURL}}" style="width:100px; height:100px"></img></td>
                 <td class="text-active">{{cont.pagesCount}}</td>
                 <td class="text-active">{{cont.progress}}%</td>
             </tr>

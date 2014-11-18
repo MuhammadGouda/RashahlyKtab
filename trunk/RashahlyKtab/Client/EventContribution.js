@@ -41,9 +41,7 @@
                 self.uiHelper.addMode = false;
             }
         };
-
-
-
+        
         self.getAllConts = function () {
            
             self.uiHelper.addMode = false;
@@ -60,9 +58,9 @@
         };
 
         self.getMyConts = function () {
-            //not clean solution
+            //dirty solution
             //I store current userId in a hidden server side control and pass its value to angularjs function using JQuery selector
-            //I should get current userId directly from angularjs objects and services
+            //I should get current userId directly from angularjs objects and services, but still don't know how
             var userId = $("#userId").text();            
             self.uiHelper.addMode = false;
             self.hasData = false;
@@ -80,19 +78,16 @@
             });
         };
         
-        self.saveCont = function () {
+        self.saveCont = function () {            
+            var eventId = $location.absUrl().split('/').pop();                      
             
-            var eventId = $location.absUrl().split('/').pop();
             
             
-            self.newCont.currentEvent = { "id": eventId, "title": "test" };
-            //self.newCont.contributer = { "id": eventId, "title": "test" };
-            
-            $http.post('/api/contribution', self.newCont).success(function (data, status, headers, config) {
-                alert('success');
+            $http.post('/api/contribution', self.newCont).success(function (data, status, headers, config) {               
                 
                     self.uiHelper.clearForm();
                     self.getAllconts();
+                    self.getMyConts();
             }).error(function (data, status, headers, config) {
                 alert('err');
                     self.uiHelper.message = "Oops!... something went wrong.";

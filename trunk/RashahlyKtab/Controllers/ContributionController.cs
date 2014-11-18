@@ -37,7 +37,7 @@ namespace RashahlyKtab.Controllers
                 .Include(c => c.Book)
                 .Include(c => c.Contributer.User)
                 .Include(c => c.Contributer.CurrentEvent)
-                .Where(c => c.Contributer.CurrentEvent.Id == eventId)
+                .Where(c => c.Contributer.CurrentEvent.Id == eventId).OrderByDescending(c=>c.Id).Take(20)//load most recent 20 records only
                 .ToListAsync();
         }
 
@@ -116,11 +116,7 @@ namespace RashahlyKtab.Controllers
         [Authorize()]
         [ResponseType(typeof(Contribution))]
         public async Task<IHttpActionResult> PostContribution(Contribution contribution)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        {           
             
             UpdateContribution(contribution);
             
@@ -137,10 +133,30 @@ namespace RashahlyKtab.Controllers
             
         }
 
+        //set properties that are not set from client side
         private void UpdateContribution(Contribution contribution)
         {
-            contribution.StartDate = DateTime.Now;
-            contribution.Contributer = new Contributor() { JoinDate = DateTime.Now, User = new ApplicationUser() { UserName = User.Identity.Name} };
+            contribution.StartDate = DateTime.Now;//to be entered by user
+            contribution.EndtDate = DateTime.Now.AddDays(5);//to be entered by user
+            string currentUserId = User.Identity.GetUserId();
+            string strEventId = HttpContext.Current.Request.UrlReferrer.Segments[2];//the event id
+            int currentEventId = 0;
+            int.TryParse(strEventId, out currentEventId);
+            if (currentEventId == 0)
+                throw new Exception("Invalid Event ID");
+            Event currentEvent = db.Events.Find(currentEventId);
+            if (currentEvent == null)
+                throw new Exception("Invalid Event ID");
+            //check of current user already is a contributor
+            var existingCont = db.Contributors.FirstOrDefault(c => c.User.Id == currentUserId);
+            if (existingCont != null)//if yes use his record
+                contribution.Contributer = existingCont;
+            else //else create a new record using current logged in user
+                contribution.Contributer = new Contributor() { 
+                    JoinDate = DateTime.Now, 
+                    User = db.Users.Find(currentUserId),
+                    CurrentEvent = currentEvent
+                };
             
         }
 
