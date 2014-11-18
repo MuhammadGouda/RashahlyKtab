@@ -29,7 +29,15 @@ namespace RashahlyKtab.Models
 
         public DateTime LastModified { get; set; }
 
-
+        [NotMapped]
+        public int DaysSinceLastModifications
+        { 
+            get 
+            {
+                var dateDif = DateTime.Now - LastModified;
+                return dateDif.Days;                
+            } 
+        }
 
         [NotMapped]
         public double Progress
