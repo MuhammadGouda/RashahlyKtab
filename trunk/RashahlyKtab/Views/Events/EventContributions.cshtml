@@ -4,10 +4,10 @@
     <div ng-repeat="cont in contCtrl.conts | orderBy:'-id'" style="padding-top:10px">
 
         <span class="btn-link">{{cont.contributer.user.userName}}</span>
-        from Cairo, Egypt is reading <span class="btn-link"> {{cont.book.title}}</span>
+        from Cairo, Egypt is reading <span class="btn-link" ng-click="cont.showImage()"> {{cont.book.title}}</span>
         finished {{cont.currentPage}} pages out of {{cont.pagesCount}}
         <span id="progress" class="alert-danger" style="width:100%">{{cont.progress}}%</span>
-
+        <span class="badge">{{35-cont.id}} days ago</span>@*fake data just for demo*@       
 
     </div>
 </div>

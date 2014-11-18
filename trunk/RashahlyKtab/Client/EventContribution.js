@@ -79,12 +79,8 @@
         };
         
         self.saveCont = function () {            
-            var eventId = $location.absUrl().split('/').pop();                      
-            
-            
-            
+            var eventId = $location.absUrl().split('/').pop();    
             $http.post('/api/contribution', self.newCont).success(function (data, status, headers, config) {               
-                
                     self.uiHelper.clearForm();
                     self.getAllconts();
                     self.getMyConts();
@@ -94,6 +90,8 @@
                 });
         };
 
-
+        self.showImage = function () {
+            alert(test);
+        }
     });
 })();
