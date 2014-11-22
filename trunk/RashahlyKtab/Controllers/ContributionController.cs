@@ -37,7 +37,7 @@ namespace RashahlyKtab.Controllers
                 .Include(c => c.Book)
                 .Include(c => c.Contributer.User)
                 .Include(c => c.Contributer.CurrentEvent)
-                .Where(c => c.Contributer.CurrentEvent.Id == eventId).OrderByDescending(c=>c.Id).Take(20)//load most recent 20 records only
+                .Where(c => c.Contributer.CurrentEvent.Id == eventId).OrderByDescending(c=>c.LastModified).Take(20)//load most recently updated 20 records only
                 .ToListAsync();
         }
 

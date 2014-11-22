@@ -29,14 +29,30 @@ namespace RashahlyKtab.Models
 
         public DateTime LastModified { get; set; }
 
+       
+
         [NotMapped]
-        public int DaysSinceLastModifications
-        { 
-            get 
+        public string ModificationAge
+        {
+            get
             {
+                string result = "";
                 var dateDif = DateTime.Now - LastModified;
-                return dateDif.Days;                
-            } 
+                int num;
+                if ((num = dateDif.Days) > 1)
+                    result = num + " days ago";
+                else if (dateDif.Days == 1)
+                    result = "Yesterday";
+                else if (dateDif.Hours > 1)
+                    result = dateDif.Hours + " hours ago";
+                else if (dateDif.Hours == 1)
+                    result = "An hour ago";
+                else if (dateDif.Minutes > 1)
+                    result = dateDif.Minutes + " minutes ago";
+                else 
+                    result = "Now";
+                return result;
+            }
         }
 
         [NotMapped]
