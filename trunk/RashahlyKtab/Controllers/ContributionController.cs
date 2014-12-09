@@ -124,7 +124,8 @@ namespace RashahlyKtab.Controllers
             try
             {
                 await db.SaveChangesAsync();
-                return CreatedAtRoute("DefaultApi", new { id = contribution.Id }, contribution);
+                //return CreatedAtRoute("DefaultApi", new { id = contribution.Id }, contribution);
+                return this.Ok<Contribution>(contribution);
             }
             catch (Exception ex)
             {
@@ -137,8 +138,10 @@ namespace RashahlyKtab.Controllers
         private void UpdateContribution(Contribution contribution)
         {
             contribution.StartDate = DateTime.Now;//to be entered by user
-            contribution.EndtDate = DateTime.Now.AddDays(5);//to be entered by user
+            contribution.LastModified = DateTime.Now;
+            //contribution.EndtDate = DateTime.Now.AddDays(5);//to be entered by user
             string currentUserId = User.Identity.GetUserId();
+
             string strEventId = HttpContext.Current.Request.UrlReferrer.Segments[2];//the event id
             int currentEventId = 0;
             int.TryParse(strEventId, out currentEventId);

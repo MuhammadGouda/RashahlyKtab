@@ -8,12 +8,10 @@ namespace RashahlyKtab.Migrations
         public override void Up()
         {
             AddColumn("dbo.Contributions", "LastModified", c => c.DateTime(nullable: false));
-            DropColumn("dbo.Contributors", "LastModified");
         }
-        
+
         public override void Down()
         {
-            AddColumn("dbo.Contributors", "LastModified", c => c.DateTime(nullable: false));
             DropColumn("dbo.Contributions", "LastModified");
         }
     }

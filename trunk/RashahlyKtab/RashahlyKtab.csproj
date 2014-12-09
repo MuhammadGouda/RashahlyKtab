@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201411180818228_Contribution.LastModified.Designer.cs">
       <DependentUpon>201411180818228_Contribution.LastModified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412091345027_BookAndContributorNotRequired.cs" />
+    <Compile Include="Migrations\201412091345027_BookAndContributorNotRequired.Designer.cs">
+      <DependentUpon>201412091345027_BookAndContributorNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookModel.cs" />
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411180818228_Contribution.LastModified.resx">
       <DependentUpon>201411180818228_Contribution.LastModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412091345027_BookAndContributorNotRequired.resx">
+      <DependentUpon>201412091345027_BookAndContributorNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

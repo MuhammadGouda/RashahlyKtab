@@ -81,12 +81,13 @@
         self.saveCont = function () {            
             var eventId = $location.absUrl().split('/').pop();    
             $http.post('/api/contribution', self.newCont).success(function (data, status, headers, config) {               
-                    self.uiHelper.clearForm();
-                    self.getAllconts();
-                    self.getMyConts();
+                self.uiHelper.clearForm();
+                self.getMyConts();
+                self.getAllConts();
+                    
             }).error(function (data, status, headers, config) {
                 alert('err');
-                    self.uiHelper.message = "Oops!... something went wrong.";
+                self.uiHelper.message = "Oops!... something went wrong.";
                 });
         };
 

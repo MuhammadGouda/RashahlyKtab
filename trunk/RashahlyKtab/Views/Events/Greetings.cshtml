@@ -7,13 +7,13 @@
         <span>Hurry </span>
         <span>@User.Identity.GetUserName().Split('@')[0]</span>
         <span>.. you didn't join yet!</span>
-        <span class="btn-warning" ng-click="contCtrl.uiHelper.showAddMode()"> Join Now</span>
+        <span class="btn-warning" @*ng-click="contCtrl.uiHelper.showAddMode()"*@> Join Now</span>
     </div>
     <div ng-show="contCtrl.hasData">
         <span>Welcome back </span>
         <span>@User.Identity.GetUserName().Split('@')[0]</span>
         
-        <span class="btn-warning" ng-click="contCtrl.uiHelper.showAddMode()"> Update Your Progress</span>
+        <span class="btn-warning" @*ng-click="contCtrl.uiHelper.showAddMode()"*@> Update Your Progress</span>
         
     </div>
     }

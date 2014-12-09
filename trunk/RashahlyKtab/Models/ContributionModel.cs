@@ -14,9 +14,9 @@ namespace RashahlyKtab.Models
         public int Id { get; set; }
         [Required]
         public int PagesCount { get; set; }
-        [Required]
+        //[Required]
         public Book Book { get; set; }
-        [Required]
+        //[Required]
         public Contributor Contributer { get; set; }
         
         [Required]
