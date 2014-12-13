@@ -4,7 +4,9 @@
 }
 
 @section scripts{
-    @Scripts.Render("~/Client/EventContribution.js")    
+    @Scripts.Render("~/Scripts/xeditable.min.js") 
+    @Scripts.Render("~/Client/EventContribution.js")
+    @Styles.Render("~/Content/xeditable.css")
 }
 <div ng-app="EventContributionModule">    
     @Html.Partial("EventDetails", null)

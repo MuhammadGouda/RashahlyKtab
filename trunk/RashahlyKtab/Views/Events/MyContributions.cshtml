@@ -7,22 +7,46 @@
     <table class="table table-striped table-hover" ng-show="contCtrl.hasData">
         <thead>
             <tr>
-                <th class="text-center danger ">Edit</th>
                 <th class="text-center danger ">Book</th>
                 @*<th class="text-center danger ">Book URL</th>*@
-                <th class="text-center danger ">Book Image</th>
+                @*<th class="text-center danger ">Book Image</th>*@
                 <th class="text-center danger ">Current Page</th>
                 <th class="text-center danger ">Progress</th>
+                <th class="text-center danger ">Edit</th>
             </tr>
         </thead>
-        <tbody>
-            <tr ng-repeat="cont in contCtrl.myConts">
-                <td class="text-active"><img src="~/Content/images/edit-icon2.png" class="btn-link"/></td>
-                @*<td class="text-active">{{cont.book.title}}</td>*@
-                <td class="text-active" width="200px"><a href="{{cont.bookURL}}">{{cont.book.title}}</a></td>
-                <td class="text-active"><img src="{{cont.imageURL}}" style="width:100px; height:100px"></img></td>
+        <tbody ng-repeat="cont in contCtrl.myConts">
+            <tr>
+                <td class="text-active">{{cont.book.title}}</td>
+                @*<td class="text-active" width="200px"><a href="{{cont.bookURL}}">{{cont.book.title}}</a></td>*@
+                @*<td class="text-active"><img src="{{cont.imageURL}}" style="width:100px; height:100px"></img></td>*@
                 <td class="text-active">{{cont.currentPage}}</td>
                 <td class="text-active">{{cont.progress}}%</td>
+                <td class="text-active"><a href="#" ng-click="rowform.$show()">update</a></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <form editable-form name="rowform" ng-show="rowform.$visible" onaftersave="updateContr(cont)" class="form-buttons form-inline">
+                        <div>
+                            <span>Current page:</span>
+                            <span editable-text="cont.currentPage" e-name="currentPage" e-form="rowform"></span>
+                        </div>
+                        <div>
+                            <span>Review URL:</span>
+                            <span editable-text="cont.reviewURL" e-name="reviewURL" e-form="rowform"></span>
+                        </div>
+                        <div>
+                            <span>Image URL:</span>
+                            <span editable-text="cont.imageURL" e-name="imageURL" e-form="rowform"></span>
+                        </div>
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                            save
+                        </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                            cancel
+                        </button>
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>

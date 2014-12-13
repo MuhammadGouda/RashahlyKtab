@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module("EventContributionModule", []);
+    var app = angular.module("EventContributionModule", ['xeditable']);
     app.controller("EventStatsController", ["$http", "$location", function ($http, $location) {
 
         var self = this;
@@ -18,11 +18,10 @@
         });
     }]);
 
-    app.controller("ContributionController", function ($http, $location) {
+    app.controller("ContributionController", function ($scope,$http, $location) {
         var self = this;
         
         self.newCont = {
-            s
         };
 
         self.uiHelper = {
@@ -88,5 +87,15 @@
         self.showImage = function () {
             alert(test);
         }
+
+        $scope.updateContr = function (contr) {
+            $http.put("/api/contribution/" + contr.id, contr)
+                .success(function (data, status, headers, config) {
+
+                }).error(function (data, status, headers, config) {
+                    self.uiHelper.message = "Oops!... something went wrong.";
+                });
+        };
+
     });
 })();
