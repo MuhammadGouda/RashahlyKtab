@@ -12,7 +12,7 @@
 
         $http.get("/api/event/" + eventid + '?includestatistics=true').success(function (data) {
             self.event = data;
-            //self.actions.fbLink = $location.absUrl();
+            
         }).error(function (data) {
 
         });
@@ -22,13 +22,7 @@
         var self = this;
         
         self.newCont = {
-            //"pagesCount": 1000,
-            //"book": { "id": 3, "title": "Untitled" },
-            //"contributer": {
-            //    "id": 4,
-            //    "currentEvent": { "id": 1, "title": "Week1" },
-            //    "user": { "id": "aaa7e68e-4f47-4a56-bd76-b6319140c903", "userName": "muhammad.gouda@itworx.com" }
-            //}
+            s
         };
 
         self.uiHelper = {
